@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills & Interests</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to top, #022547, #06aef6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Dialog box */
+        .dialog-box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        /* Header */
+        h2 {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        /* Input fields */
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 6px;
+            background: #f7f7f7;
+            font-size: 14px;
+            box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        input:focus {
+            outline: none;
+            background: #eef5ff;
+            border: 1px solid #2575fc;
+        }
+
+        /* Button */
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 6px;
+            background: #2575fc;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #1e5bbc;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dialog-box">
+        <h2>Tell us about you!</h2>
+        <input type="text" id="skills" placeholder="Enter your skills">
+        <input type="text" id="interests" placeholder="Enter your interests">
+        <button onclick="submitForm()">Submit</button>
+    </div>
+    <script>
+        function submitForm() {
+            let skills = document.getElementById("skills").value;
+            let interests = document.getElementById("interests").value;
+            if (skills && interests) {
+                alert("Skills: " + skills + "\nInterests: " + interests);
+            } else {
+                alert("Please enter both skills and interests!");
+            }
+        }
+    </script>
+</body>
+</html>
